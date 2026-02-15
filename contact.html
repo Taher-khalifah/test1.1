@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | دهانات الريم</title>
+    <meta name="description" content="تواصل مع دهانات الريم. نحن هنا لمساعدتك!">
+    <link rel="icon" type="image/png" href="pic/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: { 900: '#1a365d', 800: '#1e40af' }, accent: { 500: '#C9A227', 600: '#B8922A' } },
+                    fontFamily: { arabic: ['Cairo', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Cairo', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(26, 54, 93, 0.95) 0%, rgba(30, 64, 175, 0.85) 100%); }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-8px); }
+        .btn-primary { background: linear-gradient(135deg, #d4a574 0%, #b8956a 100%); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4); }
+        .section-padding { padding: 80px 0; }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #d4a574; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        
+        /* Animation Classes */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+    </style>
+</head>
+<body class="font-arabic" style="background-color: #C9A227;" x-data="{ mobileMenuOpen: false }">
+    
+    <nav class="fixed top-0 right-0 left-0 z-50 bg-white/95 backdrop-blur-md shadow-sm" dir="rtl">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="pic/logo.png" alt="دهانات الريم" class="h-14">
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-primary-900 font-medium">الرئيسية</a>
+                    <a href="interior-paints.html" class="nav-link text-gray-700 hover:text-primary-900 font-medium">الدهانات الداخلية</a>
+                    <a href="exterior-paints.html" class="nav-link text-gray-700 hover:text-primary-900 font-medium">الخارجية</a>
+                    <a href="decorative-paints.html" class="nav-link text-gray-700 hover:text-primary-900 font-medium">الديكورية</a>
+                    <a href="contact.html" class="nav-link text-primary-900 font-medium">تواصل معنا</a>
+                </div>
+                <div class="hidden md:flex">
+                    <a href="https://wa.me/966XXXXXXXXX" target="_blank" class="btn-primary text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2"><i class="fab fa-whatsapp"></i>اطلب عرض سعر</a>
+                </div>
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+        </div>
+        <div x-show="mobileMenuOpen" class="md:hidden bg-white border-t p-4">
+            <a href="index.html" class="block py-2">الرئيسية</a>
+            <a href="contact.html" class="block py-2 text-primary-900">تواصل معنا</a>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center animate-float">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">تواصل معنا</h1>
+                <p class="text-xl text-white/80 mb-8">نحن هنا لمساعدتك</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-8 rounded-2xl bg-gray-50 hover-lift">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"><i class="fab fa-whatsapp text-green-500 text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-primary-900 mb-3">واتساب</h3>
+                    <p class="text-gray-600">+966XXXXXXXXX</p>
+                    <a href="https://wa.me/966XXXXXXXXX" target="_blank" class="text-accent-600 font-semibold mt-2 inline-block">تواصل الآن</a>
+                </div>
+                <div class="text-center p-8 rounded-2xl bg-gray-50 hover-lift">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6"><i class="fas fa-phone text-blue-500 text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-primary-900 mb-3">اتصل بنا</h3>
+                    <p class="text-gray-600">+966XXXXXXXXX</p>
+                </div>
+                <div class="text-center p-8 rounded-2xl bg-gray-50 hover-lift">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6"><i class="fas fa-envelope text-red-500 text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-primary-900 mb-3">البريد</h3>
+                    <p class="text-gray-600">info@alreempaints.com</p>
+                </div>
+                <div class="text-center p-8 rounded-2xl bg-gray-50 hover-lift">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6"><i class="fas fa-map-marker-alt text-purple-500 text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-primary-900 mb-3">الموقع</h3>
+                    <p class="text-gray-600">الرياض، السعودية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-primary-900">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6">تواصل معنا مباشرة!</h2>
+            <a href="https://wa.me/966XXXXXXXXX" target="_blank" class="btn-primary text-white px-8 py-4 rounded-full font-bold inline-flex items-center gap-3"><i class="fab fa-whatsapp text-2xl"></i>تواصل عبر واتساب</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="pic/logo.png" alt="دهانات الريم" class="h-10">
+                    </div>
+                    <p class="text-gray-400">متخصصون في دهانات عالية الجودة</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">تواصل معنا</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone text-accent-500 ml-2"></i>+966XXXXXXXXX</li>
+                        <li><i class="fab fa-whatsapp text-accent-500 ml-2"></i>+966XXXXXXXXX</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2024 دهانات الريم. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/966XXXXXXXXX" target="_blank" class="fixed bottom-8 left-8 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all" style="animation: float 3s ease-in-out infinite;">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+    <style>@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }</style>
+</body>
+</html>
+
